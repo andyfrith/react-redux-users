@@ -1,0 +1,23 @@
+[
+  {
+    "id": 1,
+    "firstName": "Bart",
+    "lastName": "Simpson",
+    "address": "742 Evergreen Terrace",
+    "active": true
+  },
+  {
+    "id": 2,
+    "firstName": "Homer",
+    "lastName": "Simpson",
+    "address": "742 Evergreen Terrace",
+    "active": true
+  },
+  {
+    "id": 3,
+    "firstName": "Maggie",
+    "lastName": "Simpson",
+    "address": "742 Evergreen Terrace",
+    "active": true
+  }
+]
