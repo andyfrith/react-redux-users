@@ -9,17 +9,16 @@ const TextInput = ({name, label, onChange, placeholder, value, error}) => {
 
   return (
     <div className={wrapperClass}>
-      <div className="mdl-textfield mdl-js-textfield">
+      <div className="field">
+        <label>{label}</label>
         <input
           type="text"
           name={name}
-          className="mdl-textfield__input"
           placeholder={placeholder}
           value={value}
           onChange={onChange}/>
-        {error && <div className="alert alert-danger">{error}</div>}
-        <label htmlFor={name}>{label}</label>
       </div>
+      {error && <div className="alert alert-danger">{error}</div>}
     </div>
   );
 };

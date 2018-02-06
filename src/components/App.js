@@ -10,7 +10,7 @@ class App extends React.Component {
     return (
       <div>
         <Header />
-        <main className="mdl-layout__content container">
+        <main className="ui main text container">
           <Route path="/" exact component={UsersPage} />
           <Route path="/users" exact component={UsersPage} />
           <Route path="/user/:id" exact component={UserPage} />

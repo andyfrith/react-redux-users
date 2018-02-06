@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import UserListItem from './UserListItem'
 
 const UsersList = ({ users, onEditUserClick, onDeleteUserClick }) => (
-  <ul className='user-list mdl-list'>
+  <div className='ui relaxed divided list'>
     {users.map(user =>
       <UserListItem
         key={user.id}
@@ -12,7 +12,7 @@ const UsersList = ({ users, onEditUserClick, onDeleteUserClick }) => (
         onDeleteUserClick={() => onDeleteUserClick(user)}
       />
     )}
-  </ul>
+  </div>
 )
 
 UsersList.propTypes = {

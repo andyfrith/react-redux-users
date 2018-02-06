@@ -5,25 +5,21 @@ import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 
 const UserListItem = ({ onEditUserClick, onDeleteUserClick, id, firstName, lastName, address }) => (
-  <li
-    className="mdl-list__item mdl-list__item--three-line"
+  <div
+    className="item"
   >
-  <span className="mdl-list__item-primary-content">
-      <i className="material-icons mdl-list__item-avatar">person</i>
-      <span>{firstName} {lastName}</span>
-      <span className="mdl-list__item-text-body">
-        {address}
-      </span>
-    </span>
-    <span>
-      <Link className="mdl-list__item-secondary-action" onClick={onEditUserClick} to={ '/user/ ' + id }>
-        <i className="material-icons">mode edit</i>
-      </Link>
-      <Link className="mdl-list__item-secondary-action" onClick={onDeleteUserClick} to='/users'>
-        <i className="material-icons">delete forever</i>
-      </Link>
-    </span>
-  </li>
+  <Link className="right floated content" onClick={onEditUserClick} to={ '/user/ ' + id }>
+    <i className="edit middle aligned icon"></i>
+  </Link>
+  <Link className="right floated content" onClick={onDeleteUserClick} to='/users'>
+    <i className="delete middle aligned icon"></i>
+  </Link>
+    <i className="large user middle aligned icon"></i>
+    <div className="content">
+      <div className="header">{firstName} {lastName}</div>
+      <div className="description">{address}</div>
+    </div>
+  </div>
 );
 
 UserListItem.propTypes = {

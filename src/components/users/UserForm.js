@@ -72,7 +72,7 @@ class UserForm extends React.Component {
   render() {
     return (
       <div>
-        <form>
+        <form className="ui form">
           <TextInput
             name="firstName"
             label="First Name"
@@ -94,7 +94,7 @@ class UserForm extends React.Component {
           <input
             type="submit"
             value="Save"
-            className="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent"
+            className="ui primary button small"
             onClick={this.handleSubmit} />
         </form>
       </div>
