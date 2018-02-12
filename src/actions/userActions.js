@@ -3,58 +3,55 @@ import usersAPI from '../api/UsersAPI';
 
 let nextUserId = 4;
 
-export const loadUsersSuccess = users => ({
-  type: types.LOAD_USERS_SUCCESS, users
+export const loadUsersSuccess = (users) => ({
+  type: types.LOAD_USERS_SUCCESS,
+  users
 });
 
-export const deleteUserSuccess = user => ({
-  type: types.DELETE_USER_SUCCESS, user
+export const deleteUserSuccess = (user) => ({
+  type: types.DELETE_USER_SUCCESS,
+  user
 });
 
-export const updateUserSuccess = user => ({
-  type: types.UPDATE_USER_SUCCESS, user
+export const updateUserSuccess = (user) => ({
+  type: types.UPDATE_USER_SUCCESS,
+  user
 });
 
-export const createUserSuccess = user => ({
-  type: types.CREATE_USER_SUCCESS, user
+export const createUserSuccess = (user) => ({
+  type: types.CREATE_USER_SUCCESS,
+  user
 });
 
-export const selectUser = user => ({
-  type: types.SELECT_USER, user
+export const selectUser = (user) => ({
+  type: types.SELECT_USER,
+  user
 });
 
-export function loadUsers() {
-  return function(dispatch) {
-    return usersAPI.getAllUsers().then(users => {
+export const loadUsers = () => (dispatch) =>
+  usersAPI
+    .getAllUsers()
+    .then((users) => {
       dispatch(loadUsersSuccess(users));
-    }).catch(error => {
-      throw(error);
+    })
+    .catch((error) => {
+      throw error;
     });
-  };
-}
 
-export function updateUser(user) {
-  return function(dispatch) {
-    dispatch(updateUserSuccess(user));
-  }
-}
+export const updateUser = (user) => (dispatch) =>
+  dispatch(updateUserSuccess(user));
 
-export function createUser(id, firstName, lastName, address, active) {
+export const createUser = (id, firstName, lastName, address, active) => {
   const user = {
-    id: (id && id !== 0) ? id : nextUserId++,
+    id: id && id !== 0 ? id : nextUserId++,
     firstName,
     lastName,
     address,
-    active: true,
+    active: true
   };
 
-  return function (dispatch) {
-    dispatch(createUserSuccess(user));
-  };
-}
+  return (dispatch) => dispatch(createUserSuccess(user));
+};
 
-export function deleteUser(user) {
-  return function(dispatch) {
-    dispatch(deleteUserSuccess(user));
-  }
-}
+export const deleteUser = (user) => (dispatch) =>
+  dispatch(deleteUserSuccess(user));
