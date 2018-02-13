@@ -3,6 +3,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
+import { Wrapper } from './Wrapper';
 
 const UserListItem = ({
   onEditUserClick,
@@ -12,7 +13,7 @@ const UserListItem = ({
   lastName,
   address
 }) => (
-  <div className="item">
+  <Wrapper className="item">
     <Link
       className="right floated content"
       onClick={onEditUserClick}
@@ -32,7 +33,7 @@ const UserListItem = ({
       </div>
       <div className="description">{address}</div>
     </div>
-  </div>
+  </Wrapper>
 );
 
 UserListItem.propTypes = {
@@ -45,3 +46,5 @@ UserListItem.propTypes = {
 };
 
 export default UserListItem;
+
+// className="item"

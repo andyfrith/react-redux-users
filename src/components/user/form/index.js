@@ -1,9 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import TextInput from '../common/TextInput';
+import TextInput from '../../common/TextInput';
 
 class UserForm extends React.Component {
-
   constructor(props) {
     super(props);
 
@@ -17,7 +16,11 @@ class UserForm extends React.Component {
       }
     };
 
-    if (props.isEditing && props.selectedUser && props.selectedUser.firstName !== '') {
+    if (
+      props.isEditing &&
+      props.selectedUser &&
+      props.selectedUser.firstName !== ''
+    ) {
       this.state = {
         user: {
           id: props.selectedUser.id,
@@ -42,10 +45,11 @@ class UserForm extends React.Component {
 
   handleSubmit(event) {
     event.preventDefault();
-    if((this.state.user.firstName || 0 !== this.state.user.firstName.length)
-      && (this.state.user.lastName || 0 !== this.state.user.lastName.length)
-      && (this.state.user.address || 0 !== this.state.user.address.length)) {
-
+    if (
+      (this.state.user.firstName || 0 !== this.state.user.firstName.length) &&
+      (this.state.user.lastName || 0 !== this.state.user.lastName.length) &&
+      (this.state.user.address || 0 !== this.state.user.address.length)
+    ) {
       this.props.createUser(
         this.state.user.id,
         this.state.user.firstName,
@@ -63,8 +67,7 @@ class UserForm extends React.Component {
       };
       this.setState({ user });
       alert('User info submitted');
-    }
-    else {
+    } else {
       alert('All fields are required');
     }
   }
@@ -77,25 +80,29 @@ class UserForm extends React.Component {
             name="firstName"
             label="First Name"
             value={this.state.user.firstName}
-            onChange={this.handleChange} />
+            onChange={this.handleChange}
+          />
 
           <TextInput
             name="lastName"
             label="Last Name"
             value={this.state.user.lastName}
-            onChange={this.handleChange} />
+            onChange={this.handleChange}
+          />
 
           <TextInput
             name="address"
             label="Address"
             value={this.state.user.address}
-            onChange={this.handleChange} />
+            onChange={this.handleChange}
+          />
 
           <input
             type="submit"
             value="Save"
             className="ui primary button small"
-            onClick={this.handleSubmit} />
+            onClick={this.handleSubmit}
+          />
         </form>
       </div>
     );

@@ -1,9 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import UserListItem from './UserListItem';
+import UserListItem from '../listItem/';
+import { Wrapper } from './Wrapper';
 
 const UsersList = ({ users, onEditUserClick, onDeleteUserClick }) => (
-  <div className="ui relaxed divided list">
+  <Wrapper className="ui relaxed divided list">
     {users.map((user) => (
       <UserListItem
         key={user.id}
@@ -12,7 +13,7 @@ const UsersList = ({ users, onEditUserClick, onDeleteUserClick }) => (
         onDeleteUserClick={() => onDeleteUserClick(user)}
       />
     ))}
-  </div>
+  </Wrapper>
 );
 
 UsersList.propTypes = {
@@ -30,3 +31,5 @@ UsersList.propTypes = {
 };
 
 export default UsersList;
+
+//  className="ui relaxed divided list"

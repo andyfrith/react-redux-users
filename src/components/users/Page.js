@@ -1,5 +1,5 @@
 import React from 'react';
-import UsersContainer from '../../containers/UsersContainer';
+import UsersContainer from '../../containers/users/';
 
 class UsersPage extends React.Component {
   render() {

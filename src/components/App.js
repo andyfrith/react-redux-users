@@ -1,8 +1,8 @@
-import React from "react";
-import { Route } from "react-router-dom";
-import Header from "./common/Header";
-import UserPage from "./users/UserPage";
-import UsersPage from "./users/UsersPage";
+import React from 'react';
+import { Route } from 'react-router-dom';
+import Header from './common/Header';
+import UserPage from './user/Page';
+import UsersPage from './users/Page';
 
 class App extends React.Component {
   render() {
