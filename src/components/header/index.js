@@ -1,13 +1,18 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Wrapper } from './styles';
+import { Actions } from '../common/styles';
+import { Button } from '../common/form/styles';
 
 const Header = () => {
   return (
-    <Wrapper>
-      <Link to="/">Users</Link>
-      <Link to="/user">Add User</Link>
-    </Wrapper>
+    <Actions>
+      <Link to="/">
+        <Button primary>Show Users</Button>
+      </Link>
+      <Link to="/user">
+        <Button primary>Add User</Button>
+      </Link>
+    </Actions>
   );
 };
 

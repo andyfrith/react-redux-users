@@ -4,10 +4,10 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import { Wrapper } from './styles';
-import { Button } from '../../common/form/Button';
-import { User } from '../../common/User';
-import { Name } from '../../common/Name';
-import { Address } from '../../common/Address';
+import { Button } from '../../common/form/styles';
+import { User } from '../../common/styles';
+import { Name } from '../../common/styles';
+import { Address } from '../../common/styles';
 
 const UserListItem = ({
   onEditUserClick,
@@ -25,10 +25,10 @@ const UserListItem = ({
       <Address>{address}</Address>
     </User>
     <Link onClick={onEditUserClick} to={'/user/ ' + id}>
-      <Button>Edit</Button>
+      <Button primary>Edit</Button>
     </Link>
     <Link onClick={onDeleteUserClick} to="/users">
-      <Button>Delete</Button>
+      <Button primary>Delete</Button>
     </Link>
   </Wrapper>
 );

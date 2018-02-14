@@ -1,7 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import TextInput from '../../common/form/TextInput';
-import { Button } from '../../common/form/Button';
+import { Form } from '../../common/form/styles';
+import { Button } from '../../common/form/styles';
 
 class UserForm extends React.Component {
   constructor(props) {
@@ -76,7 +77,7 @@ class UserForm extends React.Component {
   render() {
     return (
       <div>
-        <form>
+        <Form>
           <TextInput
             name="firstName"
             label="First Name"
@@ -98,10 +99,14 @@ class UserForm extends React.Component {
             onChange={this.handleChange}
           />
 
-          <Button type="submit" value="Save" onClick={this.handleSubmit}>
+          <Button
+            primary
+            type="submit"
+            value="Save"
+            onClick={this.handleSubmit}>
             Save
           </Button>
-        </form>
+        </Form>
       </div>
     );
   }
