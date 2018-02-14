@@ -1,11 +1,13 @@
 import React from 'react';
 import UserContainer from '../../containers/user/';
+import { Title } from '../common/page/styles';
+import { Wrapper } from '../common/page/styles';
 
 const UserPage = ({ match }) => (
-  <div>
-    <h1>User</h1>
+  <Wrapper>
+    <Title>User</Title>
     <UserContainer isEditing={match.params.id ? true : false} />
-  </div>
+  </Wrapper>
 );
 
 export default UserPage;

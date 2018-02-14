@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import TextInput from '../../common/TextInput';
+import TextInput from '../../common/form/TextInput';
+import { Button } from '../../common/form/Button';
 
 class UserForm extends React.Component {
   constructor(props) {
@@ -75,7 +76,7 @@ class UserForm extends React.Component {
   render() {
     return (
       <div>
-        <form className="ui form">
+        <form>
           <TextInput
             name="firstName"
             label="First Name"
@@ -97,12 +98,9 @@ class UserForm extends React.Component {
             onChange={this.handleChange}
           />
 
-          <input
-            type="submit"
-            value="Save"
-            className="ui primary button small"
-            onClick={this.handleSubmit}
-          />
+          <Button type="submit" value="Save" onClick={this.handleSubmit}>
+            Save
+          </Button>
         </form>
       </div>
     );

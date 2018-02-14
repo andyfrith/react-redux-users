@@ -1,10 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import UserListItem from '../listItem/';
-import { Wrapper } from './Wrapper';
+import { Wrapper } from './styles';
 
 const UsersList = ({ users, onEditUserClick, onDeleteUserClick }) => (
-  <Wrapper className="ui relaxed divided list">
+  <Wrapper>
     {users.map((user) => (
       <UserListItem
         key={user.id}
@@ -31,5 +31,3 @@ UsersList.propTypes = {
 };
 
 export default UsersList;
-
-//  className="ui relaxed divided list"
