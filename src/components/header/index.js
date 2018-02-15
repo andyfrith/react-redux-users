@@ -7,10 +7,10 @@ const Header = () => {
   return (
     <Actions>
       <Link to="/">
-        <Button primary>Show Users</Button>
+        <Button primary>Show Divas</Button>
       </Link>
       <Link to="/user">
-        <Button primary>Add User</Button>
+        <Button primary>Add Diva</Button>
       </Link>
     </Actions>
   );

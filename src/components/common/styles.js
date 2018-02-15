@@ -1,30 +1,19 @@
 import styled from 'styled-components';
 
-export const Address = styled.div``;
+export const Address = styled.div`
+  font-size: 1em;
+  text-align: center;
+  text-shadow: 0px 1px 1px rgba(0, 0, 0, 0.2);
+`;
 
 export const Name = styled.span`
   font-size: 1.5em;
   text-align: center;
-  color: palevioletred;
+  color: ${(props) => props.theme.text.name.color};
+  text-shadow: 0px 1px 1px rgba(0, 0, 0, 0.2);
 `;
 
 export const User = styled.div``;
-
-export const BasicNotification = styled.p`
-  background: lightblue;
-  padding: 5px;
-  margin: 5px;
-  color: black;
-`;
-
-export const SuccessNotification = styled(BasicNotification)`
-  background: lightgreen;
-`;
-
-export const ErrorNotification = styled(BasicNotification)`
-  background: lightcoral;
-  font-weight: bold;
-`;
 
 export const Actions = styled.div`
   display: flex;

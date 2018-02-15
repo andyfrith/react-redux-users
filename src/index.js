@@ -13,7 +13,7 @@ import { loadUsers } from './actions/userActions';
 
 injectGlobal`
   body {
-    background-color: ghostwhite;
+    background-color: antiquewhite;
   }
 `;
 

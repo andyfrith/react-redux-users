@@ -1,23 +1,30 @@
 [
   {
     "id": 1,
-    "firstName": "Bart",
-    "lastName": "Simpson",
-    "address": "742 Evergreen Terrace",
+    "firstName": "Mariah",
+    "lastName": "Carey",
+    "address": "Huntington, NY",
     "active": true
   },
   {
     "id": 2,
-    "firstName": "Homer",
-    "lastName": "Simpson",
-    "address": "742 Evergreen Terrace",
+    "firstName": "Cherilyn (Cher)",
+    "lastName": "Sarkisian",
+    "address": "El Centro, CA",
     "active": true
   },
   {
     "id": 3,
-    "firstName": "Maggie",
-    "lastName": "Simpson",
-    "address": "742 Evergreen Terrace",
+    "firstName": "Celine",
+    "lastName": "Dion",
+    "address": "Henderson, NV",
+    "active": true
+  },
+  {
+    "id": 4,
+    "firstName": "Aretha",
+    "lastName": "Franklin",
+    "address": "Detriot, MI",
     "active": true
   }
 ]

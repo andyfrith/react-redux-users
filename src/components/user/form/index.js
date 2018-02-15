@@ -94,7 +94,7 @@ class UserForm extends React.Component {
 
           <TextInput
             name="address"
-            label="Address"
+            label="Hometown"
             value={this.state.user.address}
             onChange={this.handleChange}
           />
@@ -104,7 +104,7 @@ class UserForm extends React.Component {
             type="submit"
             value="Save"
             onClick={this.handleSubmit}>
-            Save
+            Save This Diva
           </Button>
         </Form>
       </div>

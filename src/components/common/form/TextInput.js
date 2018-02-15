@@ -3,19 +3,14 @@ import PropTypes from 'prop-types';
 import { Input } from './styles';
 
 const TextInput = ({ name, label, onChange, placeholder, value, error }) => {
-  let wrapperClass = 'form-group';
-  if (error && error.length > 0) {
-    wrapperClass += ` has-error`;
-  }
-
   return (
-    <div className={wrapperClass}>
+    <div>
       <div>
-        <label>{label}</label>
         <Input
+          className={name}
           type="text"
           name={name}
-          placeholder={placeholder}
+          placeholder={label}
           value={value}
           onChange={onChange}
         />
@@ -35,5 +30,3 @@ TextInput.propTypes = {
 };
 
 export default TextInput;
-
-// className="field"
