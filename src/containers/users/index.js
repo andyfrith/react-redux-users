@@ -12,13 +12,13 @@ const UsersContainer = ({ users, deleteUser, selectUser }) =>
       onDeleteUserClick={deleteUser}
     />
   ) : (
-    <p>No Users</p>
+    <p>No Divas!</p>
   );
 
 UsersContainer.propTypes = {
   users: PropTypes.arrayOf(
     PropTypes.shape({
-      id: PropTypes.number.isRequired,
+      id: PropTypes.string.isRequired,
       address: PropTypes.string.isRequired,
       firstName: PropTypes.string.isRequired,
       lastName: PropTypes.string.isRequired
