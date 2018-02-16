@@ -1,7 +1,6 @@
+import v4 from 'node-uuid';
 import * as types from './actionTypes';
 import usersAPI from '../api/UsersAPI';
-
-let nextUserId = 4;
 
 export const loadUsersSuccess = (users) => ({
   type: types.LOAD_USERS_SUCCESS,
@@ -43,7 +42,7 @@ export const updateUser = (user) => (dispatch) =>
 
 export const createUser = (id, firstName, lastName, address, active) => {
   const user = {
-    id: id && id !== 0 ? id : nextUserId++,
+    id: v4(),
     firstName,
     lastName,
     address,

@@ -36,7 +36,7 @@ const UserListItem = ({
 UserListItem.propTypes = {
   onEditUserClick: PropTypes.func.isRequired,
   onDeleteUserClick: PropTypes.func.isRequired,
-  id: PropTypes.number.isRequired,
+  id: PropTypes.string.isRequired,
   address: PropTypes.string.isRequired,
   firstName: PropTypes.string.isRequired,
   lastName: PropTypes.string.isRequired

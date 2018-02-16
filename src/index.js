@@ -5,17 +5,19 @@ import { createStore, applyMiddleware } from 'redux';
 import thunk from 'redux-thunk';
 import { HashRouter } from 'react-router-dom';
 import { injectGlobal } from 'styled-components';
+import throttle from 'lodash/throttle';
 import App from './components/app';
 import reducers from './reducers';
-import initialState from './reducers/initialState';
 import registerServiceWorker from './registerServiceWorker';
-import { loadUsers } from './actions/userActions';
+import { loadState, saveState } from './localStorage';
 
 injectGlobal`
   body {
     background-color: antiquewhite;
   }
 `;
+
+const persistedState = loadState();
 
 const middlewares = [];
 middlewares.push(thunk);
@@ -28,11 +30,15 @@ if (process.env.NODE_ENV === `development`) {
 
 const store = createStore(
   reducers,
-  initialState,
+  persistedState,
   applyMiddleware(...middlewares)
 );
 
-store.dispatch(loadUsers());
+store.subscribe(
+  throttle(() => {
+    saveState(store.getState());
+  })
+);
 
 render(
   <Provider store={store}>

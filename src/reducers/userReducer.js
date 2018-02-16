@@ -1,7 +1,6 @@
 import * as types from '../actions/actionTypes';
-import initialState from './initialState';
 
-const userReducer = (state = initialState, action) => {
+const userReducer = (state = [], action) => {
   switch (action.type) {
     case types.LOAD_USERS_SUCCESS:
       return Object.assign([], state, action.users);
