@@ -2,55 +2,53 @@ import v4 from 'node-uuid';
 import * as types from './actionTypes';
 import usersAPI from '../api/UsersAPI';
 
-export const loadUsersSuccess = (users) => ({
+export const loadUsersSuccess = users => ( {
   type: types.LOAD_USERS_SUCCESS,
-  users
-});
+  users,
+} );
 
-export const deleteUserSuccess = (user) => ({
+export const deleteUserSuccess = user => ( {
   type: types.DELETE_USER_SUCCESS,
-  user
-});
+  user,
+} );
 
-export const updateUserSuccess = (user) => ({
+export const updateUserSuccess = user => ( {
   type: types.UPDATE_USER_SUCCESS,
-  user
-});
+  user,
+} );
 
-export const createUserSuccess = (user) => ({
+export const createUserSuccess = user => ( {
   type: types.CREATE_USER_SUCCESS,
-  user
-});
+  user,
+} );
 
-export const selectUser = (user) => ({
+export const selectUser = user => ( {
   type: types.SELECT_USER,
-  user
-});
+  user,
+} );
 
-export const loadUsers = () => (dispatch) =>
+export const loadUsers = () => dispatch =>
   usersAPI
     .getAllUsers()
-    .then((users) => {
-      dispatch(loadUsersSuccess(users));
-    })
-    .catch((error) => {
+    .then( ( users ) => {
+      dispatch( loadUsersSuccess( users ) );
+    } )
+    .catch( ( error ) => {
       throw error;
-    });
+    } );
 
-export const updateUser = (user) => (dispatch) =>
-  dispatch(updateUserSuccess(user));
+export const updateUser = user => dispatch => dispatch( updateUserSuccess( user ) );
 
-export const createUser = (id, firstName, lastName, address, active) => {
+export const createUser = ( id, firstName, lastName, address, active ) => {
   const user = {
-    id: v4(),
+    id: id || v4(),
     firstName,
     lastName,
     address,
-    active: true
+    active,
   };
 
-  return (dispatch) => dispatch(createUserSuccess(user));
+  return dispatch => dispatch( createUserSuccess( user ) );
 };
 
-export const deleteUser = (user) => (dispatch) =>
-  dispatch(deleteUserSuccess(user));
+export const deleteUser = user => dispatch => dispatch( deleteUserSuccess( user ) );

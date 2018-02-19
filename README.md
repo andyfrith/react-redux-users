@@ -1,9 +1,10 @@
 # react-redux-users
 
-A React Redux application that provides simple user management tasks
+A React Redux application that provides simple user management tasks upon successful JWT authentication
 
 Features:
 
+* User authentication using JWT
 * Displays a list of users using JSX
 * Can add and remove users
 * Can update existing user information (first name, last name, address)
@@ -19,6 +20,8 @@ This app was built to demonstrate an understanding of:
 * ES6 Javascript
 * Implementing CSS styling using styled-components
 * Browser Local Storage
+* The [react-router](https://reacttraining.com/react-router/) library
+* JWT authentication
 
 ## Environment
 

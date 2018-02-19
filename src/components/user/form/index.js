@@ -1,12 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import TextInput from '../../common/form/TextInput';
-import { Form } from '../../common/form/styles';
-import { Button } from '../../common/form/styles';
+import { Button, Form } from '../../common/form/styles';
 
 class UserForm extends React.Component {
-  constructor(props) {
-    super(props);
+  constructor( props ) {
+    super( props );
 
     this.state = {
       user: {
@@ -14,8 +13,8 @@ class UserForm extends React.Component {
         firstName: '',
         lastName: '',
         address: '',
-        active: true
-      }
+        active: true,
+      },
     };
 
     if (
@@ -29,48 +28,48 @@ class UserForm extends React.Component {
           firstName: props.selectedUser.firstName,
           lastName: props.selectedUser.lastName,
           address: props.selectedUser.address,
-          active: props.selectedUser.active
-        }
+          active: props.selectedUser.active,
+        },
       };
     }
 
-    this.handleChange = this.handleChange.bind(this);
-    this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleChange = this.handleChange.bind( this );
+    this.handleSubmit = this.handleSubmit.bind( this );
   }
 
-  handleChange(event) {
+  handleChange( event ) {
     const field = event.target.name;
-    const user = this.state.user;
-    user[field] = event.target.value;
-    return this.setState({ user });
+    const [ user ] = [ this.state.user ];
+    user[ field ] = event.target.value;
+    return this.setState( { user } );
   }
 
-  handleSubmit(event) {
+  handleSubmit( event ) {
     event.preventDefault();
     if (
-      (this.state.user.firstName || 0 !== this.state.user.firstName.length) &&
-      (this.state.user.lastName || 0 !== this.state.user.lastName.length) &&
-      (this.state.user.address || 0 !== this.state.user.address.length)
+      ( this.state.user.firstName || this.state.user.firstName.length !== 0 ) &&
+      ( this.state.user.lastName || this.state.user.lastName.length !== 0 ) &&
+      ( this.state.user.address || this.state.user.address.length !== 0 )
     ) {
       this.props.createUser(
         this.state.user.id,
         this.state.user.firstName,
         this.state.user.lastName,
         this.state.user.address,
-        this.state.user.active
+        this.state.user.active,
       );
 
-      let user = {
+      const user = {
         id: 0,
         firstName: '',
         lastName: '',
         address: '',
-        active: true
+        active: true,
       };
-      this.setState({ user });
-      alert('User info submitted');
+      this.setState( { user } );
+      // alert( 'User info submitted' );
     } else {
-      alert('All fields are required');
+      // alert( 'All fields are required' );
     }
   }
 
@@ -80,21 +79,21 @@ class UserForm extends React.Component {
         <Form>
           <TextInput
             name="firstName"
-            label="First Name"
+            placeholder="First Name"
             value={this.state.user.firstName}
             onChange={this.handleChange}
           />
 
           <TextInput
             name="lastName"
-            label="Last Name"
+            placeholder="Last Name"
             value={this.state.user.lastName}
             onChange={this.handleChange}
           />
 
           <TextInput
             name="address"
-            label="Hometown"
+            placeholder="Hometown"
             value={this.state.user.address}
             onChange={this.handleChange}
           />
@@ -103,7 +102,8 @@ class UserForm extends React.Component {
             primary
             type="submit"
             value="Save"
-            onClick={this.handleSubmit}>
+            onClick={this.handleSubmit}
+          >
             Save This Diva
           </Button>
         </Form>
@@ -112,10 +112,14 @@ class UserForm extends React.Component {
   }
 }
 
+UserForm.defaultProps = {
+  selectedUser: null,
+};
+
 UserForm.propTypes = {
   selectedUser: PropTypes.object,
   isEditing: PropTypes.bool.isRequired,
-  createUser: PropTypes.func.isRequired
+  createUser: PropTypes.func.isRequired,
 };
 
 export default UserForm;

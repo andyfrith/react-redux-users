@@ -9,7 +9,7 @@ export const Address = styled.div`
 export const Name = styled.span`
   font-size: 1.5em;
   text-align: center;
-  color: ${(props) => props.theme.text.name.color};
+  color: ${ props => props.theme.text.name.color };
   text-shadow: 0px 1px 1px rgba(0, 0, 0, 0.2);
 `;
 
@@ -40,12 +40,12 @@ export const Action = styled.button`
   }
 `;
 
-export const CancelAction = styled(Action)`
+export const CancelAction = styled( Action )`
   background-image: linear-gradient(to top left, #f78ca0 0%, #fe9a8b 100%);
   color: #ffffff;
 `;
 
-export const AcceptAccion = styled(Action)`
+export const AcceptAccion = styled( Action )`
   background-image: linear-gradient(to top left, #4facfe 0%, #00f2fe 100%);
   color: #ffffff;
 `;

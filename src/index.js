@@ -1,44 +1,21 @@
 import React from 'react';
 import { render } from 'react-dom';
 import { Provider } from 'react-redux';
-import { createStore, applyMiddleware } from 'redux';
-import thunk from 'redux-thunk';
 import { HashRouter } from 'react-router-dom';
 import { injectGlobal } from 'styled-components';
-import throttle from 'lodash/throttle';
+import configureStore from './configureStore';
 import App from './components/app';
-import reducers from './reducers';
 import registerServiceWorker from './registerServiceWorker';
-import { loadState, saveState } from './localStorage';
 
+const store = configureStore();
+
+// eslint-disable-next-line no-unused-expressions
 injectGlobal`
   body {
     background-color: antiquewhite;
+    background: url('/assets/img/bg.jpg');
   }
 `;
-
-const persistedState = loadState();
-
-const middlewares = [];
-middlewares.push(thunk);
-
-if (process.env.NODE_ENV === `development`) {
-  const { logger } = require(`redux-logger`);
-
-  middlewares.push(logger);
-}
-
-const store = createStore(
-  reducers,
-  persistedState,
-  applyMiddleware(...middlewares)
-);
-
-store.subscribe(
-  throttle(() => {
-    saveState(store.getState());
-  })
-);
 
 render(
   <Provider store={store}>
@@ -46,7 +23,7 @@ render(
       <App />
     </HashRouter>
   </Provider>,
-  document.getElementById('root')
+  document.getElementById( 'root' ),
 );
 
 registerServiceWorker();

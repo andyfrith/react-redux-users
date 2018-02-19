@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const Wrapper = styled.div`
+const Wrapper = styled.div`
   > a {
     display: inline-flex;
     padding: 0.1em 1em;
@@ -16,3 +16,5 @@ export const Wrapper = styled.div`
     color: #666;
   }
 `;
+
+export default Wrapper;
